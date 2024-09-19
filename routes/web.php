@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\TemplateController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\TemplateController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,4 +14,14 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/',[TemplateController::class,'index']);
+
+Route::middleware(['guest'])->group(function(){
+    Route::get('/',[AuthController::class,'index'])->name('login');
+	Route::post('/login', [AuthController::class, 'login']);
+});
+
+
+Route::middleware(['auth'])->group(function(){
+    Route::post('/logout',[AuthController::class, 'logout'])->name('logout');
+    Route::get('/dashboard',[TemplateController::class,'index']);
+});
