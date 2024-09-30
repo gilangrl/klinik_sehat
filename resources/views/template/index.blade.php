@@ -12,9 +12,13 @@
     <!-- App favicon -->
     <link rel="shortcut icon" href="../assets/images/favicon.ico">
 
+    <!-- Bootstrap Tables css -->
+    <link href="../assets/libs/bootstrap-table/bootstrap-table.min.css" rel="stylesheet" type="text/css" />
+
     <!-- App css -->
     <link href="../assets/css/config/creative/bootstrap.min.css" rel="stylesheet" type="text/css"
         id="bs-default-stylesheet" />
+        
     <link href="../assets/css/config/creative/app.min.css" rel="stylesheet" type="text/css"
         id="app-default-stylesheet" />
 
@@ -324,133 +328,54 @@
                     <div class="collapse navbar-collapse" id="topnav-menu-content">
                         <ul class="navbar-nav">
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-dashboard"
-                                    role="button" data-bs-toggle="dropdown" aria-haspopup="true"
-                                    aria-expanded="false">
-                                    <i class="fe-airplay me-1"></i> Dashboards <div class="arrow-down"></div>
+                                <a class="nav-link dropdown-toggle arrow-none" href="{{ route('dashboard.isi') }}"
+                                    class="dropdown-item">
+                                    <i class="fe-airplay me-1"></i>
+                                    Dashboard
                                 </a>
-                                <div class="dropdown-menu" aria-labelledby="topnav-dashboard">
-                                    <a href="index.html" class="dropdown-item">Dashboard 1</a>
-                                </div>
                             </li>
 
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-apps"
                                     role="button" data-bs-toggle="dropdown" aria-haspopup="true"
                                     aria-expanded="false">
-                                    <i class="fe-grid me-1"></i> Apps <div class="arrow-down"></div>
+                                    <i class="fe-grid me-1"></i> Data Master <div class="arrow-down"></div>
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="topnav-apps">
 
-                                    <a href="apps-calendar.html" class="dropdown-item"><i
-                                            class="fe-calendar me-1"></i> Calendar</a>
+                                    <a href="{{ route('dashboard.obat') }}" class="dropdown-item">
+                                        <i class="fas fa-pills me-2"></i>
+                                        Data Obat
+                                    </a>
+                                    <a href="{{ route('dashboard.pasien') }}" class="dropdown-item"><i
+                                            class="fas fa-user-injured me-2"></i>
+                                        Data Pasien
+                                    </a>
+                                    <a href="apps-chat.html" class="dropdown-item">
+                                        <i class="fas fa-user-md me-2"></i>
+                                        Data Dokter
+                                    </a>
+                                    <a href="apps-chat.html" class="dropdown-item">
+                                        <i class="fas fa-th-large me-2"></i>
+                                        Data Kategori
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-apps"
+                                    role="button" data-bs-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false">
+                                    <i class="fe-heart me-1"></i> Pemeriksaan <div class="arrow-down"></div>
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="topnav-apps">
+
+                                    <a href="apps-calendar.html" class="dropdown-item">
+                                        <i class="fas fa-stethoscope me-2"></i>Data Pemeriksaan
+                                    </a>
                                     <a href="apps-chat.html" class="dropdown-item"><i
-                                            class="fe-message-square me-1"></i> Chat</a>
-                                    <div class="dropdown">
-                                        <a class="dropdown-item dropdown-toggle arrow-none" href="#"
-                                            id="topnav-ecommerce" role="button" data-bs-toggle="dropdown"
-                                            aria-haspopup="true" aria-expanded="false">
-                                            <i class="fe-shopping-cart me-1"></i> Ecommerce <div class="arrow-down">
-                                            </div>
-                                        </a>
-                                        <div class="dropdown-menu" aria-labelledby="topnav-ecommerce">
-                                            <a href="ecommerce-dashboard.html" class="dropdown-item">Dashboard</a>
-                                            <a href="ecommerce-products.html" class="dropdown-item">Products</a>
-                                            <a href="ecommerce-product-detail.html" class="dropdown-item">Product
-                                                Detail</a>
-                                            <a href="ecommerce-product-edit.html" class="dropdown-item">Add
-                                                Product</a>
-                                            <a href="ecommerce-customers.html" class="dropdown-item">Customers</a>
-                                            <a href="ecommerce-orders.html" class="dropdown-item">Orders</a>
-                                            <a href="ecommerce-order-detail.html" class="dropdown-item">Order
-                                                Detail</a>
-                                            <a href="ecommerce-sellers.html" class="dropdown-item">Sellers</a>
-                                            <a href="ecommerce-cart.html" class="dropdown-item">Shopping Cart</a>
-                                            <a href="ecommerce-checkout.html" class="dropdown-item">Checkout</a>
-                                        </div>
-                                    </div>
-                                    <div class="dropdown">
-                                        <a class="dropdown-item dropdown-toggle arrow-none" href="#"
-                                            id="topnav-email" role="button" data-bs-toggle="dropdown"
-                                            aria-haspopup="true" aria-expanded="false">
-                                            <i class="fe-mail me-1"></i> Email <div class="arrow-down"></div>
-                                        </a>
-                                        <div class="dropdown-menu" aria-labelledby="topnav-email">
-                                            <a href="email-inbox.html" class="dropdown-item">Inbox</a>
-                                            <a href="email-read.html" class="dropdown-item">Read Email</a>
-                                            <a href="email-compose.html" class="dropdown-item">Compose Email</a>
-                                            <a href="email-templates.html" class="dropdown-item">Email Templates</a>
-                                        </div>
-                                    </div>
-
-                                    <div class="dropdown">
-                                        <a class="dropdown-item dropdown-toggle arrow-none" href="#"
-                                            id="topnav-crm" role="button" data-bs-toggle="dropdown"
-                                            aria-haspopup="true" aria-expanded="false">
-                                            <i class="fe-users me-1"></i> CRM <div class="arrow-down"></div>
-                                        </a>
-                                        <div class="dropdown-menu" aria-labelledby="topnav-crm">
-                                            <a href="crm-dashboard.html" class="dropdown-item">Dashboard</a>
-                                            <a href="crm-contacts.html" class="dropdown-item">Contacts</a>
-                                            <a href="crm-opportunities.html" class="dropdown-item">Opportunities</a>
-                                            <a href="crm-leads.html" class="dropdown-item">Leads</a>
-                                            <a href="crm-customers.html" class="dropdown-item">Customers</a>
-                                        </div>
-                                    </div>
-
-                                    <a href="apps-social-feed.html" class="dropdown-item"><i class="fe-rss me-1"></i>
-                                        Social Feed</a>
-                                    <a href="apps-companies.html" class="dropdown-item"><i
-                                            class="fe-activity me-1"></i> Companies</a>
-
-                                    <div class="dropdown">
-                                        <a class="dropdown-item dropdown-toggle arrow-none" href="#"
-                                            id="topnav-project" role="button" data-bs-toggle="dropdown"
-                                            aria-haspopup="true" aria-expanded="false">
-                                            <i class="fe-briefcase me-1"></i> Projects <div class="arrow-down"></div>
-                                        </a>
-                                        <div class="dropdown-menu" aria-labelledby="topnav-project">
-                                            <a href="project-list.html" class="dropdown-item">List</a>
-                                            <a href="project-detail.html" class="dropdown-item">Detail</a>
-                                            <a href="project-create.html" class="dropdown-item">Create Project</a>
-                                        </div>
-                                    </div>
-                                    <div class="dropdown">
-                                        <a class="dropdown-item dropdown-toggle arrow-none" href="#"
-                                            id="topnav-task" role="button" data-bs-toggle="dropdown"
-                                            aria-haspopup="true" aria-expanded="false">
-                                            <i class="fe-clipboard me-1"></i> Tasks <div class="arrow-down"></div>
-                                        </a>
-                                        <div class="dropdown-menu" aria-labelledby="topnav-task">
-                                            <a href="task-list.html" class="dropdown-item">List</a>
-                                            <a href="task-details.html" class="dropdown-item">Details</a>
-                                            <a href="task-kanban-board.html" class="dropdown-item">Kanban Board</a>
-                                        </div>
-                                    </div>
-                                    <div class="dropdown">
-                                        <a class="dropdown-item dropdown-toggle arrow-none" href="#"
-                                            id="topnav-contact" role="button" data-bs-toggle="dropdown"
-                                            aria-haspopup="true" aria-expanded="false">
-                                            <i class="fe-book me-1"></i> Contacts <div class="arrow-down"></div>
-                                        </a>
-                                        <div class="dropdown-menu" aria-labelledby="topnav-contact">
-                                            <a href="contacts-list.html" class="dropdown-item">Members List</a>
-                                            <a href="contacts-profile.html" class="dropdown-item">Profile</a>
-                                        </div>
-                                    </div>
-                                    <div class="dropdown">
-                                        <a class="dropdown-item dropdown-toggle arrow-none" href="#"
-                                            id="topnav-tickets" role="button" data-bs-toggle="dropdown"
-                                            aria-haspopup="true" aria-expanded="false">
-                                            <i class="fe-aperture me-1"></i> Tickets <div class="arrow-down"></div>
-                                        </a>
-                                        <div class="dropdown-menu" aria-labelledby="topnav-tickets">
-                                            <a href="tickets-list.html" class="dropdown-item">List</a>
-                                            <a href="tickets-detail.html" class="dropdown-item">Detail</a>
-                                        </div>
-                                    </div>
-                                    <a href="apps-file-manager.html" class="dropdown-item"><i
-                                            class="fe-folder-plus me-1"></i> File Manager</a>
+                                            class="fas fa-file-medical me-2"></i>
+                                        Data Resep
+                                    </a>
                                 </div>
                             </li>
                         </ul> <!-- end navbar-->
@@ -465,162 +390,9 @@
 
         <div class="content-page">
             <div class="content">
-
-                <!-- Start Content-->
-                <div class="container-fluid">
-
-                    <!-- start page title -->
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="page-title-box">
-                                <div class="page-title-right">
-                                    <ol class="breadcrumb m-0">
-                                        <li class="breadcrumb-item"><a href="javascript: void(0);">UBold</a></li>
-                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboards</a></li>
-                                        <li class="breadcrumb-item active">Dashboard 3</li>
-                                    </ol>
-                                </div>
-                                <h4 class="page-title">Dashboard 3</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end page title -->
-
-
-                    <div class="row">
-                        <div class="col-md-6 col-xl-3">
-                            <div class="card" id="tooltip-container">
-                                <div class="card-body">
-                                    <i class="fa fa-info-circle text-muted float-end"
-                                        data-bs-container="#tooltip-container" data-bs-toggle="tooltip"
-                                        data-bs-placement="bottom" title="More Info"></i>
-                                    <h4 class="mt-0 font-16">Income Status</h4>
-                                    <h2 class="text-primary my-3 text-center">$<span
-                                            data-plugin="counterup">31,570</span></h2>
-                                    <p class="text-muted mb-0">Total income: $22506 <span class="float-end"><i
-                                                class="fa fa-caret-up text-success me-1"></i>10.25%</span></p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6 col-xl-3">
-                            <div class="card" id="tooltip-container1">
-                                <div class="card-body">
-                                    <i class="fa fa-info-circle text-muted float-end"
-                                        data-bs-container="#tooltip-container1" data-bs-toggle="tooltip"
-                                        data-bs-placement="bottom" title="More Info"></i>
-                                    <h4 class="mt-0 font-16">Sales Status</h4>
-                                    <h2 class="text-primary my-3 text-center"><span data-plugin="counterup">683</span>
-                                    </h2>
-                                    <p class="text-muted mb-0">Total sales: 2398 <span class="float-end"><i
-                                                class="fa fa-caret-down text-danger me-1"></i>7.85%</span></p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6 col-xl-3">
-                            <div class="card" id="tooltip-container2">
-                                <div class="card-body">
-                                    <i class="fa fa-info-circle text-muted float-end"
-                                        data-bs-container="#tooltip-container2" data-bs-toggle="tooltip"
-                                        data-bs-placement="bottom" title="More Info"></i>
-                                    <h4 class="mt-0 font-16">Recent Users</h4>
-                                    <h2 class="text-primary my-3 text-center"><span
-                                            data-plugin="counterup">3.2</span>M</h2>
-                                    <p class="text-muted mb-0">Total users: 121 M <span class="float-end"><i
-                                                class="fa fa-caret-up text-success me-1"></i>3.64%</span></p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6 col-xl-3">
-                            <div class="card" id="tooltip-container3">
-                                <div class="card-body">
-                                    <i class="fa fa-info-circle text-muted float-end"
-                                        data-bs-container="#tooltip-container3" data-bs-toggle="tooltip"
-                                        data-bs-placement="bottom" title="More Info"></i>
-                                    <h4 class="mt-0 font-16">Total Revenue</h4>
-                                    <h2 class="text-primary my-3 text-center">$<span
-                                            data-plugin="counterup">68,541</span></h2>
-                                    <p class="text-muted mb-0">Total revenue: $1.2 M <span class="float-end"><i
-                                                class="fa fa-caret-up text-success me-1"></i>17.48%</span></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end row -->
-
-                    <div class="row">
-                        <div class="col-xl-6">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="float-end d-none d-md-inline-block">
-                                        <div class="btn-group mb-2">
-                                            <button type="button" class="btn btn-xs btn-secondary">Today</button>
-                                            <button type="button" class="btn btn-xs btn-light">Weekly</button>
-                                            <button type="button" class="btn btn-xs btn-light">Monthly</button>
-                                        </div>
-                                    </div>
-                                    <h4 class="header-title">Revenue</h4>
-                                    <div class="row mt-4 text-center">
-                                        <div class="col-4">
-                                            <p class="text-muted font-15 mb-1 text-truncate">Target</p>
-                                            <h4><i class="fe-arrow-down text-danger me-1"></i>$7.8k</h4>
-                                        </div>
-                                        <div class="col-4">
-                                            <p class="text-muted font-15 mb-1 text-truncate">Last week</p>
-                                            <h4><i class="fe-arrow-up text-success me-1"></i>$1.4k</h4>
-                                        </div>
-                                        <div class="col-4">
-                                            <p class="text-muted font-15 mb-1 text-truncate">Last Month</p>
-                                            <h4><i class="fe-arrow-down text-danger me-1"></i>$15k</h4>
-                                        </div>
-                                    </div>
-                                    <div class="mt-3 chartjs-chart">
-                                        <canvas id="revenue-chart" data-colors="#3283f6,#f1556c"
-                                            height="300"></canvas>
-                                    </div>
-                                </div> <!-- end card-body-->
-                            </div> <!-- end card-->
-                        </div> <!-- end col -->
-
-                        <div class="col-xl-6">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="float-end d-none d-md-inline-block">
-                                        <div class="btn-group mb-2">
-                                            <button type="button" class="btn btn-xs btn-secondary">Today</button>
-                                            <button type="button" class="btn btn-xs btn-light">Weekly</button>
-                                            <button type="button" class="btn btn-xs btn-light">Monthly</button>
-                                        </div>
-                                    </div>
-                                    <h4 class="header-title">Projections Vs Actuals</h4>
-                                    <div class="row mt-4 text-center">
-                                        <div class="col-4">
-                                            <p class="text-muted font-15 mb-1 text-truncate">Target</p>
-                                            <h4><i class="fe-arrow-down text-danger me-1"></i>$3.8k</h4>
-                                        </div>
-                                        <div class="col-4">
-                                            <p class="text-muted font-15 mb-1 text-truncate">Last week</p>
-                                            <h4><i class="fe-arrow-up text-success me-1"></i>$1.1k</h4>
-                                        </div>
-                                        <div class="col-4">
-                                            <p class="text-muted font-15 mb-1 text-truncate">Last Month</p>
-                                            <h4><i class="fe-arrow-down text-danger me-1"></i>$25k</h4>
-                                        </div>
-                                    </div>
-                                    <div class="mt-3 chartjs-chart">
-                                        <canvas id="projections-actuals-chart" data-colors="#44cf9c,#e3eaef"
-                                            height="300"></canvas>
-                                    </div>
-                                </div>
-                            </div> <!-- end card-->
-                        </div> <!-- end col -->
-                    </div>
-                    <!-- end row -->
-
-                </div> <!-- container -->
-
+                @yield('dashboards')
+                @yield('obat')
+                @yield('pasien')
             </div> <!-- content -->
 
             <!-- Footer Start -->
@@ -650,119 +422,8 @@
         <!-- End Page content -->
         <!-- ============================================================== -->
 
-
     </div>
     <!-- END wrapper -->
-
-    <!-- Right Sidebar -->
-    <div class="right-bar">
-        <div data-simplebar class="h-100">
-
-            <!-- Nav tabs -->
-            <ul class="nav nav-tabs nav-bordered nav-justified" role="tablist">
-                <li class="nav-item">
-                    <a class="nav-link py-2 active" data-bs-toggle="tab" href="#settings-tab" role="tab">
-                        <i class="mdi mdi-cog-outline d-block font-22 my-1"></i>
-                    </a>
-                </li>
-            </ul>
-
-            <!-- Tab panes -->
-            <div class="tab-content pt-0">
-                <div class="tab-pane" id="chat-tab" role="tabpanel">
-
-                    <form class="search-bar p-3">
-                        <div class="position-relative">
-                            <input type="text" class="form-control" placeholder="Search...">
-                            <span class="mdi mdi-magnify"></span>
-                        </div>
-                    </form>
-                </div>
-
-                <div class="tab-pane active" id="settings-tab" role="tabpanel">
-                    <h6 class="fw-medium px-3 m-0 py-2 font-13 text-uppercase bg-light">
-                        <span class="d-block py-1">Theme Settings</span>
-                    </h6>
-
-                    <div class="p-3">
-                        <div class="alert alert-warning" role="alert">
-                            <strong>Customize </strong> the overall color scheme, sidebar menu, etc.
-                        </div>
-
-                        <h6 class="fw-medium font-14 mt-4 mb-2 pb-1">Color Scheme</h6>
-                        <div class="form-check form-switch mb-1">
-                            <input type="checkbox" class="form-check-input" name="color-scheme-mode" value="light"
-                                id="light-mode-check" checked />
-                            <label class="form-check-label" for="light-mode-check">Light Mode</label>
-                        </div>
-
-                        <div class="form-check form-switch mb-1">
-                            <input type="checkbox" class="form-check-input" name="color-scheme-mode" value="dark"
-                                id="dark-mode-check" />
-                            <label class="form-check-label" for="dark-mode-check">Dark Mode</label>
-                        </div>
-
-                        <!-- Width -->
-                        <h6 class="fw-medium font-14 mt-4 mb-2 pb-1">Width</h6>
-                        <div class="form-check form-switch mb-1">
-                            <input type="checkbox" class="form-check-input" name="width" value="fluid"
-                                id="fluid-check" checked />
-                            <label class="form-check-label" for="fluid-check">Fluid</label>
-                        </div>
-                        <div class="form-check form-switch mb-1">
-                            <input type="checkbox" class="form-check-input" name="width" value="boxed"
-                                id="boxed-check" />
-                            <label class="form-check-label" for="boxed-check">Boxed</label>
-                        </div>
-
-                        <!-- Menu positions -->
-                        <h6 class="fw-medium font-14 mt-4 mb-2 pb-1">Layout Positon</h6>
-
-                        <div class="form-check form-switch mb-1">
-                            <input type="checkbox" class="form-check-input" name="menus-position" value="fixed"
-                                id="fixed-check" checked />
-                            <label class="form-check-label" for="fixed-check">Fixed</label>
-                        </div>
-
-                        <div class="form-check form-switch mb-1">
-                            <input type="checkbox" class="form-check-input" name="menus-position" value="scrollable"
-                                id="scrollable-check" />
-                            <label class="form-check-label" for="scrollable-check">Scrollable</label>
-                        </div>
-
-                        <!-- Topbar -->
-                        <h6 class="fw-medium font-14 mt-4 mb-2 pb-1">Topbar</h6>
-
-                        <div class="form-check form-switch mb-1">
-                            <input type="checkbox" class="form-check-input" name="topbar-color" value="dark"
-                                id="darktopbar-check" checked />
-                            <label class="form-check-label" for="darktopbar-check">Dark</label>
-                        </div>
-
-                        <div class="form-check form-switch mb-1">
-                            <input type="checkbox" class="form-check-input" name="topbar-color" value="light"
-                                id="lighttopbar-check" />
-                            <label class="form-check-label" for="lighttopbar-check">Light</label>
-                        </div>
-
-
-                        <div class="d-grid mt-4">
-                            <button class="btn btn-primary" id="resetBtn">Reset to Default</button>
-                            <a href="https://1.envato.market/uboldadmin" class="btn btn-danger mt-3"
-                                target="_blank"><i class="mdi mdi-basket me-1"></i> Purchase Now</a>
-                        </div>
-
-                    </div>
-
-                </div>
-            </div>
-
-        </div> <!-- end slimscroll-menu-->
-    </div>
-    <!-- /Right-bar -->
-
-    <!-- Right bar overlay-->
-    <div class="rightbar-overlay"></div>
 
     <!-- Vendor js -->
     <script src="../assets/js/vendor.min.js"></script>
@@ -784,7 +445,13 @@
 
     <!-- App js-->
     <script src="../assets/js/app.min.js"></script>
-    <script>
+
+    <!-- Bootstrap Tables js -->
+    <script src="../assets/libs/bootstrap-table/bootstrap-table.min.js"></script>
+
+    <!-- Init js -->
+    <script src="../assets/js/pages/bootstrap-tables.init.js"></script>
+    {{-- <script>
         let idleTime = 0;
 
         // Reset jika tidak ada gerakan
@@ -803,7 +470,7 @@
                 window.location.href = '/'; // Arahkan ke route logout
             }
         }, 60000); // Cek setiap satu menit
-    </script>
+    </script> --}}
 
     <script type="text/javascript">
         function preventBack() {

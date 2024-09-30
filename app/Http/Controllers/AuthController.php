@@ -30,7 +30,7 @@ class AuthController extends Controller
 
         if (Auth::attempt($credentials)) {
             // Jika autentikasi berhasil, redirect ke halaman setelah login
-            return redirect('/dashboard');
+            return redirect()->route('dashboard.isi');
             // dd($credentials);
         } else {
             // Jika autentikasi gagal, kembali ke halaman login dengan pesan error
