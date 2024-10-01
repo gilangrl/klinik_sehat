@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\DokterController;
+use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\ObatController;
 use App\Http\Controllers\PasienController;
 use App\Http\Controllers\TemplateController;
@@ -37,5 +39,14 @@ Route::middleware(['auth'])->group(function () {
         // PASIEN
         Route::get('/pasien', [PasienController::class, 'index'])->name('dashboard.pasien');
         Route::get('/pasien_add', [PasienController::class, 'create'])->name('dashboard.pasien_add');
+
+        // DOKTER
+        Route::get('/dokter', [DokterController::class, 'index'])->name('dashboard.dokter');
+        Route::get('/dokter_add', [DokterController::class, 'create'])->name('dashboard.dokter_add');
+
+        // KATEGORI
+        Route::get('/kategori', [KategoriController::class, 'index'])->name('dashboard.kategori');
+        Route::get('/kategori_add', [KategoriController::class, 'create'])->name('dashboard.kategori_add');
+        Route::post('/kategori_store', [KategoriController::class, 'store'])->name('dashboard.kategori_store');
     });
 });

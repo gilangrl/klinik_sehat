@@ -18,7 +18,7 @@
     <!-- App css -->
     <link href="../assets/css/config/creative/bootstrap.min.css" rel="stylesheet" type="text/css"
         id="bs-default-stylesheet" />
-        
+
     <link href="../assets/css/config/creative/app.min.css" rel="stylesheet" type="text/css"
         id="app-default-stylesheet" />
 
@@ -29,6 +29,10 @@
 
     <!-- icons -->
     <link href="../assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Plugins css -->
+    <link href="../assets/libs/dropzone/min/dropzone.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/libs/dropify/css/dropify.min.css" rel="stylesheet" type="text/css" />
 
 </head>
 
@@ -351,11 +355,11 @@
                                             class="fas fa-user-injured me-2"></i>
                                         Data Pasien
                                     </a>
-                                    <a href="apps-chat.html" class="dropdown-item">
+                                    <a href="{{ route('dashboard.dokter') }}" class="dropdown-item">
                                         <i class="fas fa-user-md me-2"></i>
                                         Data Dokter
                                     </a>
-                                    <a href="apps-chat.html" class="dropdown-item">
+                                    <a href="{{ route('dashboard.kategori') }}" class="dropdown-item">
                                         <i class="fas fa-th-large me-2"></i>
                                         Data Kategori
                                     </a>
@@ -393,6 +397,8 @@
                 @yield('dashboards')
                 @yield('obat')
                 @yield('pasien')
+                @yield('dokter')
+                @yield('kategori')
             </div> <!-- content -->
 
             <!-- Footer Start -->
@@ -443,6 +449,11 @@
     <!-- Dashboard init JS -->
     <script src="../assets/js/pages/dashboard-3.init.js"></script>
 
+    <script src="../assets/libs/dropify/js/dropify.min.js"></script>
+
+    <!-- Init js-->
+    <script src="../assets/js/pages/form-fileuploads.init.js"></script>
+
     <!-- App js-->
     <script src="../assets/js/app.min.js"></script>
 
@@ -451,6 +462,14 @@
 
     <!-- Init js -->
     <script src="../assets/js/pages/bootstrap-tables.init.js"></script>
+
+    <!-- Plugins js -->
+    <script src="../assets/libs/dropzone/min/dropzone.min.js"></script>
+    <script src="../assets/libs/dropify/js/dropify.min.js"></script>
+
+    <!-- Init js-->
+    <script src="../assets/js/pages/form-fileuploads.init.js"></script>
+
     {{-- <script>
         let idleTime = 0;
 

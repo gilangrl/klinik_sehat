@@ -29,9 +29,11 @@
                                     placeholder="Masukan Nama Obat" class="form-control" id="NamaObat" />
                             </div>
                             <div class="col-lg-6">
+                                <label for="foto" class="form-label">Foto<span
+                                    class="text-danger">*</span></label>
                                 <div class="mt-3">
-                                    <label for="example-fileinput" class="form-label">Foto</label>
-                                    <input type="file" name="foto" id="example-fileinput" class="form-control">
+                                    <input type="file" name="foto" data-plugins="dropify" data-max-file-size="1M" />
+                                    <p class="text-muted text-center mt-2 mb-0">Max File size</p>
                                 </div>
                             </div>
                             <div class="col-lg-6">
